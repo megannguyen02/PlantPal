@@ -71,14 +71,6 @@ enum Endpoint {
 }
  
 
-//extension URLRequest {
-//    mutating func addValues(for endpoint: Endpoint) {
-//        self.setValue(HTTP.Value.applicationJson.rawValue, forHTTPHeaderField: HTTP.Headers.Key.contentType.rawValue)
-//        self.setValue("Bearer \(Constants.API_KEY)", forHTTPHeaderField: HTTP.Headers.Key.apiToken.rawValue)
-////        self.setValue(Constants.API_KEY, forHTTPHeaderField: HTTP.Headers.Key.apiToken.rawValue)
-//    }
-//}
-
 extension URLRequest {
     func addingHeaderValues(for endpoint: Endpoint) -> URLRequest {
         var request = self

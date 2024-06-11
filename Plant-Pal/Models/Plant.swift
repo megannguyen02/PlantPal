@@ -15,27 +15,35 @@ struct PlantArray: Decodable {
 struct Plant: Codable {
     let image: String
     let name: String
-//    let sciName: String
-//    let humidity: Int
-//    let soilMoisture: Int
+    let sciName: String
+    let humidity: Int
+    let soilMoisture: Int
 //    let uv: Int
     
     enum CodingKeys: String, CodingKey {
         case image = "image_url"
         case name = "common_name"
-//        case sciName = "scientific_name"
-//        case humidity = "atmosphertic_humidity"
-//        case soilMoisture = "soil_humidity"
+        case sciName = "scientific_name"
+        case humidity = "atmosphertic_humidity"
+        case soilMoisture = "soil_humidity"
 //        case uv = "light"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        image = try container.decode(String.self, forKey: .image)
+        name = try container.decode(String.self, forKey: .name)
+        sciName = try container.decode(String.self, forKey: .sciName)
+        humidity = try container.decodeIfPresent(Int.self, forKey: .humidity) ?? 50 // default value
+        soilMoisture = try container.decodeIfPresent(Int.self, forKey: .soilMoisture) ?? 50 // default value
+    }
+
+    init(image: String, name: String, sciName: String, humidity: Int = 50, soilMoisture: Int = 50) {
+        self.image = image
+        self.name = name
+        self.sciName = sciName
+        self.humidity = humidity
+        self.soilMoisture = soilMoisture
     }
 }
 
-//extension Plant {
-//    public static func getMockArray() -> [Plant] {
-//        return [
-//            Plant(image_url: "https://d2seqvvyy3b8p2.cloudfront.net/40ab8e7cdddbe3e78a581b84efa4e893.jpg", common_name: "Evergreen oak", atmospheric_humidity: 10, soil_humidity: 50, light: 25),
-//            Plant(image_url: "https://bs.plantnet.org/image/o/f8d7d6fe52e36d04f5ad1fc03f46f604d5c3cc43", common_name: "Narrow-leaf plantain", atmospheric_humidity: 80, soil_humidity: 75, light: 40),
-//            Plant(image_url: "https://bs.plantnet.org/image/o/f84a7d4fc2e627ccd451f568479b1932c2b2d900", common_name: "Barnyard grass", atmospheric_humidity: 80, soil_humidity: 75, light: 40)
-//        ]
-//    }
-//}

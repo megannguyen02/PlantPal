@@ -77,7 +77,7 @@ class ViewPlantController: UIViewController {
         }()
         
         private lazy var vStack: UIStackView = {
-           let vStack = UIStackView(arrangedSubviews: [sciName, humidityLabel, soilMoistureLabel, uvLabel])
+           let vStack = UIStackView(arrangedSubviews: [sciName, humidityLabel, soilMoistureLabel])
             vStack.axis = .vertical
             vStack.spacing = 12
             vStack.distribution = .fill

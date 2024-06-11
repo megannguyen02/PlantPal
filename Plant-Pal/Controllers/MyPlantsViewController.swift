@@ -18,6 +18,15 @@ class MyPlantsViewController: UIViewController {
         tv.register(UITableViewCell.self, forCellReuseIdentifier: "PlantCell")
         return tv
     }()
+    
+    private let addButton: UIButton = {
+            let button = UIButton(type: .system)
+            button.setTitle("Add Plants", for: .normal)
+        button.setTitleColor(.systemGreen, for: .normal)
+            button.titleLabel?.font = .systemFont(ofSize: 18)
+            button.addTarget(self, action: #selector(addPlantsTapped), for: .touchUpInside)
+            return button
+        }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +36,17 @@ class MyPlantsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        view.addSubview(addButton)
         view.addSubview(tableView)
+                        
+        addButton.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            addButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            addButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 10),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
@@ -39,6 +54,12 @@ class MyPlantsViewController: UIViewController {
         
         loadMyPlants()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            loadMyPlants() // Reload the plants every time the view appears
+        }
+
 
     private func loadMyPlants() {
         if let savedPlantsData = UserDefaults.standard.data(forKey: "MyPlants") {
@@ -48,6 +69,11 @@ class MyPlantsViewController: UIViewController {
                 }
             }
             tableView.reloadData()
+    }
+    
+    @objc private func addPlantsTapped() {
+        let viewController = ViewController() // Replace with the actual view controller you want to navigate to
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

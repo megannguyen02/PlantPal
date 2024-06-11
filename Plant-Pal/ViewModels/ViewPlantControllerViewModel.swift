@@ -39,18 +39,18 @@ class ViewPlantControllerViewModel {
     }
     
     var sciNameLabel: String {
-        return "Scientific Name: "
+        return "Scientific Name: \(self.plant.sciName)"
     }
     
     var humidityLabel: String {
-        return "Humidity Level: "
+        return "Humidity Level: \(self.plant.humidity)%"
     }
-//
+
     var soilMoistureLabel: String {
-        return "Soil Moisture Level: "
+        return "Soil Moisture Level: \(self.plant.soilMoisture)%"
     }
     
     var uvLabel: String {
-        return "Light Level: "
+        return "Light Level: Good"
     }
 }
