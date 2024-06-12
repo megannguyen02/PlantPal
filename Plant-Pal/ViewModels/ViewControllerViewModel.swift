@@ -73,24 +73,5 @@ extension ViewControllerViewModel {
     }
 }
     
-//    init() {
-//        self.fetchPlants()
-//        
-//    }
-//    
-//    public func fetchPlants() {
-//        let endpoint = Endpoint.fetchPlants.request
-//        
-//        PlantService.fetchPlants(with: .fetchPlants) { [weak self] result in
-//            switch result {
-//            case .success(let plants):
-//                self?.plants = plants
-//                print("DEBUG PRINT:", "\(plants.count) plants fetched.")
-//                
-//            case .failure(let error):
-//                self?.onErrorMessage?(error)
-//            }
-//        }
-//        
-//    }
+
 

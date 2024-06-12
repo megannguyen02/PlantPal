@@ -24,36 +24,21 @@ enum Endpoint {
         var components = URLComponents(string: Constants.baseURL)
         components?.path = Constants.path
         components?.queryItems = [
-            URLQueryItem(name: "token", value: Constants.API_KEY)]
+            URLQueryItem(name: "token", value: Constants.API_KEY)
+        ]
         let url = components?.url
         print("DEBUG: Constructed URL - \(url?.absoluteString ?? "Invalid URL")") 
         return url
     }
     
-//    private var path: String {
-//        switch self {
-//        case .fetchPlants():
-//            return url
-//        }
-//    }
-    
 //    private var queryItems: [URLQueryItem] {
-//      switch self {
-//      case .fetchPlants:
-//          return [
-////              URLQueryItem(name: "page", value: "5"),
-//          ]
-//      }
-//  }
-    private var queryItems: [URLQueryItem] {
-        var items = [URLQueryItem(name: "token", value: Constants.API_KEY)]
-        switch self {
-        case .fetchPlants:
-            items.append(URLQueryItem(name: "page", value: "7"))
-//            items.append(URLQueryItem(name: "page", value: "3"))
-        }
-        return items
-    }
+//        var items = [URLQueryItem(name: "g", value: "begonia")]
+//        switch self {
+//        case .fetchPlants:
+//            items.append(URLQueryItem(name: "q", value: "begonia"))
+//        }
+//        return items
+//    }
     
     private var httpMethod: String {
         switch self {

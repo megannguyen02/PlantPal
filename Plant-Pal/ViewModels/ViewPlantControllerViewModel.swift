@@ -45,12 +45,16 @@ class ViewPlantControllerViewModel {
     var humidityLabel: String {
         return "Humidity Level: \(self.plant.humidity)%"
     }
+    
+    var tempLabel: String {
+        return "Temp: 23.1 C"
+    }
 
     var soilMoistureLabel: String {
-        return "Soil Moisture Level: \(self.plant.soilMoisture)%"
+        return "Soil Moisture Level: \(self.plant.soilMoisture)"
     }
     
     var uvLabel: String {
-        return "Light Level: Good"
+        return "Light Level: \(self.plant.lightExposure)"
     }
 }

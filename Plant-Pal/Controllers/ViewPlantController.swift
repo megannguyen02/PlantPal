@@ -57,7 +57,16 @@ class ViewPlantController: UIViewController {
             label.text = "Error"
             return label
         }()
-//        
+    
+        private let tempLabel: UILabel = {
+            let label = UILabel()
+            label.textColor = .label
+            label.textAlignment = .center
+            label.font = .systemFont(ofSize: 20, weight: .semibold)
+            label.text = "Error"
+            return label
+        }()
+//
         private let soilMoistureLabel: UILabel = {
             let label = UILabel()
             label.textColor = .label
@@ -67,7 +76,7 @@ class ViewPlantController: UIViewController {
             return label
         }()
     
-        private let uvLabel: UILabel = {
+        private let lightLabel: UILabel = {
             let label = UILabel()
             label.textColor = .label
             label.textAlignment = .center
@@ -77,7 +86,7 @@ class ViewPlantController: UIViewController {
         }()
         
         private lazy var vStack: UIStackView = {
-           let vStack = UIStackView(arrangedSubviews: [sciName, humidityLabel, soilMoistureLabel])
+           let vStack = UIStackView(arrangedSubviews: [sciName, humidityLabel, tempLabel, soilMoistureLabel, lightLabel])
             vStack.axis = .vertical
             vStack.spacing = 12
             vStack.distribution = .fill
@@ -118,9 +127,10 @@ class ViewPlantController: UIViewController {
             self.name.text = self.viewModel.nameLabel
             self.sciName.text = self.viewModel.sciNameLabel
             self.humidityLabel.text = self.viewModel.humidityLabel
+            self.tempLabel.text = self.viewModel.tempLabel
             
             self.soilMoistureLabel.text = self.viewModel.soilMoistureLabel
-            self.uvLabel.text = self.viewModel.uvLabel
+            self.lightLabel.text = self.viewModel.uvLabel
             
             self.viewModel.onImageLoaded = { [weak self] image in
             DispatchQueue.main.async {

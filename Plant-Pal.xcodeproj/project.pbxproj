@@ -24,6 +24,7 @@
 		3FBA681C2C18CC88008CDABE /* MyPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBA681B2C18CC88008CDABE /* MyPlantsViewController.swift */; };
 		3FBA681E2C18DE19008CDABE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBA681D2C18DE19008CDABE /* SettingsViewController.swift */; };
 		3FBA68202C18FF77008CDABE /* PlantDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBA681F2C18FF77008CDABE /* PlantDataManager.swift */; };
+		3FBA68222C19384C008CDABE /* CloudData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBA68212C19384C008CDABE /* CloudData.swift */; };
 		3FBD06AB2C0AC55C00AD1CC2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD06AA2C0AC55C00AD1CC2 /* Endpoint.swift */; };
 		3FC3ABE92C111BB400513DD8 /* PlantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3ABE82C111BB400513DD8 /* PlantService.swift */; };
 		3FD04F312C01607A00D32DE1 /* ViewPlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD04F302C01607A00D32DE1 /* ViewPlantController.swift */; };
@@ -49,6 +50,7 @@
 		3FBA681B2C18CC88008CDABE /* MyPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsViewController.swift; sourceTree = "<group>"; };
 		3FBA681D2C18DE19008CDABE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3FBA681F2C18FF77008CDABE /* PlantDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDataManager.swift; sourceTree = "<group>"; };
+		3FBA68212C19384C008CDABE /* CloudData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudData.swift; sourceTree = "<group>"; };
 		3FBD06AA2C0AC55C00AD1CC2 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		3FC3ABE82C111BB400513DD8 /* PlantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantService.swift; sourceTree = "<group>"; };
 		3FD04F302C01607A00D32DE1 /* ViewPlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPlantController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				3FA6CD972BFDCC3C00C9534A /* Constants.swift */,
 				3FBA681F2C18FF77008CDABE /* PlantDataManager.swift */,
+				3FBA68212C19384C008CDABE /* CloudData.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -173,6 +176,8 @@
 			dependencies = (
 			);
 			name = "Plant-Pal";
+			packageProductDependencies = (
+			);
 			productName = "Plant-Pal";
 			productReference = 3FA6CD7A2BFDC64300C9534A /* Plant-Pal.app */;
 			productType = "com.apple.product-type.application";
@@ -201,6 +206,8 @@
 				Base,
 			);
 			mainGroup = 3FA6CD712BFDC64300C9534A;
+			packageReferences = (
+			);
 			productRefGroup = 3FA6CD7B2BFDC64300C9534A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -239,6 +246,7 @@
 				3FBA681E2C18DE19008CDABE /* SettingsViewController.swift in Sources */,
 				3FA6CD9B2BFDD04200C9534A /* PlantCell.swift in Sources */,
 				3FB7F84F2C098EA800B72409 /* HTTP.swift in Sources */,
+				3FBA68222C19384C008CDABE /* CloudData.swift in Sources */,
 				3F27534D2C1503930077DE53 /* ViewControllerViewModel.swift in Sources */,
 				3FA6CD7E2BFDC64300C9534A /* AppDelegate.swift in Sources */,
 				3FA6CD802BFDC64300C9534A /* SceneDelegate.swift in Sources */,
